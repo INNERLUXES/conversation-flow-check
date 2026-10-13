@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="conversation-flow-check" tests="20" failures="0" errors="0" time="0">
+  <testsuite name="flow" tests="20" failures="0" errors="0" skipped="2" time="0">
+    <testcase classname="flow" name="file-unreadable" time="0"/>
+    <testcase classname="flow" name="field-invalid" time="0"/>
+    <testcase classname="flow" name="field-unknown" time="0"/>
+    <testcase classname="flow" name="start-unknown" time="0"/>
+    <testcase classname="flow" name="step-target-unknown" time="0"/>
+    <testcase classname="flow" name="edge-missing" time="0"/>
+    <testcase classname="flow" name="step-unreachable" time="0"/>
+    <testcase classname="flow" name="step-dead-end" time="0"/>
+    <testcase classname="flow" name="flow-trap" time="0"/>
+    <testcase classname="flow" name="input-no-fallback" time="0"/>
+    <testcase classname="flow" name="input-no-reprompt-limit" time="0"/>
+    <testcase classname="flow" name="reprompt-limit-high" time="0"/>
+    <testcase classname="flow" name="no-handover" time="0"/>
+    <testcase classname="flow" name="handover-unreachable" time="0"/>
+    <testcase classname="flow" name="voice-multiple-questions" time="0">
+      <skipped message="the channel is chat; it only applies to voice"/>
+    </testcase>
+    <testcase classname="flow" name="voice-prompt-too-long" time="0">
+      <skipped message="the channel is chat; it only applies to voice"/>
+    </testcase>
+    <testcase classname="flow" name="irreversible-unconfirmed" time="0"/>
+    <testcase classname="flow" name="ai-disclosure-missing" time="0"/>
+    <testcase classname="flow" name="widget-message-list-not-found" time="0"/>
+    <testcase classname="flow" name="widget-live-region-missing" time="0"/>
+  </testsuite>
+</testsuites>

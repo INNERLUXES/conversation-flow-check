@@ -1,0 +1,40 @@
+conversation-flow-check: examples/bad/syntax-error.yaml
+flow file: examples/bad/syntax-error.yaml (yaml, 9 lines, 177 bytes)
+flow: no check of the flow ran because the file could not be read or was not given
+findings: 1 (1 error)
+
+Checks (20)
+
+  check                          level    kind     status         findings
+  file-unreadable                error    file     fail           1
+  field-invalid                  error    step     not-evaluated  - (the flow file could not be read)
+  field-unknown                  warning  file     not-evaluated  - (the flow file could not be read)
+  start-unknown                  error    flow     not-evaluated  - (the flow file could not be read)
+  step-target-unknown            error    step     not-evaluated  - (the flow file could not be read)
+  edge-missing                   error    step     not-evaluated  - (the flow file could not be read)
+  step-unreachable               warning  flow     not-evaluated  - (the flow file could not be read)
+  step-dead-end                  error    step     not-evaluated  - (the flow file could not be read)
+  flow-trap                      error    flow     not-evaluated  - (the flow file could not be read)
+  input-no-fallback              error    step     not-evaluated  - (the flow file could not be read)
+  input-no-reprompt-limit        warning  step     not-evaluated  - (the flow file could not be read)
+  reprompt-limit-high            warning  step     not-evaluated  - (the flow file could not be read)
+  no-handover                    error    flow     not-evaluated  - (the flow file could not be read)
+  handover-unreachable           error    flow     not-evaluated  - (the flow file could not be read)
+  voice-multiple-questions       warning  wording  skipped        - (the channel is chat; it only applies to voice)
+  voice-prompt-too-long          warning  wording  skipped        - (the channel is chat; it only applies to voice)
+  irreversible-unconfirmed       error    flow     not-evaluated  - (the flow file could not be read)
+  ai-disclosure-missing          warning  wording  not-evaluated  - (the flow file could not be read)
+  widget-message-list-not-found  warning  widget   skipped        - (no --widget file was given)
+  widget-live-region-missing     error    widget   skipped        - (no --widget file was given)
+
+Findings (1)
+
+  ERROR    file-unreadable                examples/bad/syntax-error.yaml:6
+           The flow file cannot be read as the YAML subset: a value that holds a colon and a space must be in quotes.
+           fix: Fix the line and column named; docs/inputs.md lists the YAML subset and the keys of a flow.
+
+note: no check of the flow ran because the flow file could not be read
+
+This report reads the flow file and nothing else. It does not run the flow and does not talk to a bot. A clean result means that none of the problems of its checks were found in the file; it is not a statement that the bot is good, accessible or lawful.
+
+RESULT: FAIL - 1 finding at or above error (1 error)

@@ -1,0 +1,389 @@
+{
+  "tool": "conversation-flow-check",
+  "version": "1.0.0",
+  "input": {
+    "flow": {
+      "file": "examples/good/booking-chat.yaml",
+      "format": "yaml",
+      "bytes": 2352,
+      "lines": 97
+    },
+    "widget": {
+      "file": "examples/good/widget.html",
+      "format": "html",
+      "bytes": 613,
+      "lines": 19
+    }
+  },
+  "evaluated": true,
+  "summary": {
+    "name": "Salon booking (chat)",
+    "channel": "chat",
+    "channelSource": "flow",
+    "steps": 13,
+    "reachable": 13,
+    "byType": {
+      "message": 2,
+      "choice": 2,
+      "input": 2,
+      "confirm": 2,
+      "action": 2,
+      "end": 2,
+      "handover": 1
+    },
+    "inputSteps": 6,
+    "handoverSteps": 1,
+    "irreversibleSteps": 2,
+    "opening": [
+      "welcome",
+      "ask_need"
+    ]
+  },
+  "widget": {
+    "tags": 12,
+    "candidates": 1,
+    "ok": true
+  },
+  "checks": [
+    {
+      "id": "file-unreadable",
+      "level": "error",
+      "kind": "file",
+      "status": "pass",
+      "findings": 0,
+      "detail": "no finding"
+    },
+    {
+      "id": "field-invalid",
+      "level": "error",
+      "kind": "step",
+      "status": "pass",
+      "findings": 0,
+      "detail": "no finding"
+    },
+    {
+      "id": "field-unknown",
+      "level": "warning",
+      "kind": "file",
+      "status": "pass",
+      "findings": 0,
+      "detail": "no finding"
+    },
+    {
+      "id": "start-unknown",
+      "level": "error",
+      "kind": "flow",
+      "status": "pass",
+      "findings": 0,
+      "detail": "no finding"
+    },
+    {
+      "id": "step-target-unknown",
+      "level": "error",
+      "kind": "step",
+      "status": "pass",
+      "findings": 0,
+      "detail": "no finding"
+    },
+    {
+      "id": "edge-missing",
+      "level": "error",
+      "kind": "step",
+      "status": "pass",
+      "findings": 0,
+      "detail": "no finding"
+    },
+    {
+      "id": "step-unreachable",
+      "level": "warning",
+      "kind": "flow",
+      "status": "pass",
+      "findings": 0,
+      "detail": "no finding"
+    },
+    {
+      "id": "step-dead-end",
+      "level": "error",
+      "kind": "step",
+      "status": "pass",
+      "findings": 0,
+      "detail": "no finding"
+    },
+    {
+      "id": "flow-trap",
+      "level": "error",
+      "kind": "flow",
+      "status": "pass",
+      "findings": 0,
+      "detail": "no finding"
+    },
+    {
+      "id": "input-no-fallback",
+      "level": "error",
+      "kind": "step",
+      "status": "pass",
+      "findings": 0,
+      "detail": "no finding"
+    },
+    {
+      "id": "input-no-reprompt-limit",
+      "level": "warning",
+      "kind": "step",
+      "status": "pass",
+      "findings": 0,
+      "detail": "no finding"
+    },
+    {
+      "id": "reprompt-limit-high",
+      "level": "warning",
+      "kind": "step",
+      "status": "pass",
+      "findings": 0,
+      "detail": "no finding"
+    },
+    {
+      "id": "no-handover",
+      "level": "error",
+      "kind": "flow",
+      "status": "pass",
+      "findings": 0,
+      "detail": "no finding"
+    },
+    {
+      "id": "handover-unreachable",
+      "level": "error",
+      "kind": "flow",
+      "status": "pass",
+      "findings": 0,
+      "detail": "no finding"
+    },
+    {
+      "id": "voice-multiple-questions",
+      "level": "warning",
+      "kind": "wording",
+      "status": "skipped",
+      "findings": 0,
+      "detail": "the channel is chat; it only applies to voice"
+    },
+    {
+      "id": "voice-prompt-too-long",
+      "level": "warning",
+      "kind": "wording",
+      "status": "skipped",
+      "findings": 0,
+      "detail": "the channel is chat; it only applies to voice"
+    },
+    {
+      "id": "irreversible-unconfirmed",
+      "level": "error",
+      "kind": "flow",
+      "status": "pass",
+      "findings": 0,
+      "detail": "no finding"
+    },
+    {
+      "id": "ai-disclosure-missing",
+      "level": "warning",
+      "kind": "wording",
+      "status": "pass",
+      "findings": 0,
+      "detail": "no finding"
+    },
+    {
+      "id": "widget-message-list-not-found",
+      "level": "warning",
+      "kind": "widget",
+      "status": "pass",
+      "findings": 0,
+      "detail": "no finding"
+    },
+    {
+      "id": "widget-live-region-missing",
+      "level": "error",
+      "kind": "widget",
+      "status": "pass",
+      "findings": 0,
+      "detail": "no finding"
+    }
+  ],
+  "totals": {
+    "findings": 0,
+    "byLevel": {
+      "error": 0,
+      "warning": 0,
+      "info": 0
+    },
+    "hidden": 0
+  },
+  "rules": [
+    {
+      "id": "file-unreadable",
+      "level": "error",
+      "kind": "file",
+      "findings": 0
+    },
+    {
+      "id": "field-invalid",
+      "level": "error",
+      "kind": "step",
+      "findings": 0
+    },
+    {
+      "id": "field-unknown",
+      "level": "warning",
+      "kind": "file",
+      "findings": 0
+    },
+    {
+      "id": "start-unknown",
+      "level": "error",
+      "kind": "flow",
+      "findings": 0
+    },
+    {
+      "id": "step-target-unknown",
+      "level": "error",
+      "kind": "step",
+      "findings": 0
+    },
+    {
+      "id": "edge-missing",
+      "level": "error",
+      "kind": "step",
+      "findings": 0
+    },
+    {
+      "id": "step-unreachable",
+      "level": "warning",
+      "kind": "flow",
+      "findings": 0
+    },
+    {
+      "id": "step-dead-end",
+      "level": "error",
+      "kind": "step",
+      "findings": 0
+    },
+    {
+      "id": "flow-trap",
+      "level": "error",
+      "kind": "flow",
+      "findings": 0
+    },
+    {
+      "id": "input-no-fallback",
+      "level": "error",
+      "kind": "step",
+      "findings": 0
+    },
+    {
+      "id": "input-no-reprompt-limit",
+      "level": "warning",
+      "kind": "step",
+      "findings": 0
+    },
+    {
+      "id": "reprompt-limit-high",
+      "level": "warning",
+      "kind": "step",
+      "findings": 0
+    },
+    {
+      "id": "no-handover",
+      "level": "error",
+      "kind": "flow",
+      "findings": 0
+    },
+    {
+      "id": "handover-unreachable",
+      "level": "error",
+      "kind": "flow",
+      "findings": 0
+    },
+    {
+      "id": "voice-multiple-questions",
+      "level": "warning",
+      "kind": "wording",
+      "findings": 0
+    },
+    {
+      "id": "voice-prompt-too-long",
+      "level": "warning",
+      "kind": "wording",
+      "findings": 0
+    },
+    {
+      "id": "irreversible-unconfirmed",
+      "level": "error",
+      "kind": "flow",
+      "findings": 0
+    },
+    {
+      "id": "ai-disclosure-missing",
+      "level": "warning",
+      "kind": "wording",
+      "findings": 0
+    },
+    {
+      "id": "widget-message-list-not-found",
+      "level": "warning",
+      "kind": "widget",
+      "findings": 0
+    },
+    {
+      "id": "widget-live-region-missing",
+      "level": "error",
+      "kind": "widget",
+      "findings": 0
+    }
+  ],
+  "options": {
+    "minSeverity": "info",
+    "failOn": "error",
+    "channel": "chat",
+    "channelSource": "flow",
+    "maxWords": 30,
+    "maxReprompts": 3,
+    "handover": "every-input",
+    "irreversibleActions": [
+      "pay",
+      "payment",
+      "charge",
+      "purchase",
+      "checkout",
+      "book",
+      "booking",
+      "reserve",
+      "cancel",
+      "delete",
+      "remove",
+      "erase",
+      "refund",
+      "transfer",
+      "order",
+      "submit",
+      "terminate"
+    ],
+    "disclosurePhrases": [
+      "automated",
+      "bot",
+      "chatbot",
+      "ai",
+      "artificial intelligence",
+      "virtual assistant",
+      "digital assistant",
+      "not a human",
+      "not a person",
+      "not a real person"
+    ],
+    "disabled": []
+  },
+  "findings": [],
+  "notes": [],
+  "notice": "This report reads the flow file and nothing else. It does not run the flow and does not talk to a bot. A clean result means that none of the problems of its checks were found in the file; it is not a statement that the bot is good, accessible or lawful.",
+  "result": {
+    "pass": true,
+    "failOn": "error",
+    "text": "PASS - no finding at or above error"
+  }
+}

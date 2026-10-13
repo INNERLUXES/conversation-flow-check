@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="conversation-flow-check" tests="20" failures="15" errors="0" time="0">
+  <testsuite name="flow" tests="20" failures="15" errors="0" skipped="2" time="0">
+    <testcase classname="flow" name="file-unreadable" time="0"/>
+    <testcase classname="flow" name="field-invalid" time="0">
+      <failure type="field-invalid" message="1 finding">examples/bad/support-voice.yaml:67: The type of the step &quot;odd_step&quot; is &quot;speech&quot;, which is not one of message, input, choice, confirm, action, handover, end.</failure>
+    </testcase>
+    <testcase classname="flow" name="field-unknown" time="0">
+      <failure type="field-unknown" message="2 findings">examples/bad/support-voice.yaml:5: The file has the key &quot;mode&quot; at the top level, which the tool does not read; nothing under it is checked.
+examples/bad/support-voice.yaml:29: The step &quot;ask_postcode&quot; has the key &quot;fallbak&quot;, which the tool does not read; nothing under it is checked. Did you mean &quot;fallback&quot;?</failure>
+    </testcase>
+    <testcase classname="flow" name="start-unknown" time="0"/>
+    <testcase classname="flow" name="step-target-unknown" time="0">
+      <failure type="step-target-unknown" message="1 finding">examples/bad/support-voice.yaml:21: The option &quot;person&quot; of the step &quot;ask_topic&quot; leads to &quot;no_such_step&quot;, which is not under steps.</failure>
+    </testcase>
+    <testcase classname="flow" name="edge-missing" time="0">
+      <failure type="edge-missing" message="1 finding">examples/bad/support-voice.yaml:22: An option (&quot;cancel&quot;) of the step &quot;ask_topic&quot; has no next step, so choosing it leads nowhere.</failure>
+    </testcase>
+    <testcase classname="flow" name="step-unreachable" time="0">
+      <failure type="step-unreachable" message="2 findings">examples/bad/support-voice.yaml:61: The step &quot;old_menu&quot; cannot be reached from the start step &quot;greeting&quot;.
+examples/bad/support-voice.yaml:66: The step &quot;odd_step&quot; cannot be reached from the start step &quot;greeting&quot;.</failure>
+    </testcase>
+    <testcase classname="flow" name="step-dead-end" time="0">
+      <failure type="step-dead-end" message="1 finding">examples/bad/support-voice.yaml:31: The step &quot;fault_logged&quot; (type message) has no step after it and is not marked as an end, so the conversation stops there with nothing for the user to do.</failure>
+    </testcase>
+    <testcase classname="flow" name="flow-trap" time="0">
+      <failure type="flow-trap" message="2 findings">examples/bad/support-voice.yaml:51: The step &quot;retry_loop_a&quot; is in a loop with no way out: from here no end, no handover and no dead end can be reached.
+examples/bad/support-voice.yaml:56: The step &quot;retry_loop_b&quot; is in a loop with no way out: from here no end, no handover and no dead end can be reached.</failure>
+    </testcase>
+    <testcase classname="flow" name="input-no-fallback" time="0">
+      <failure type="input-no-fallback" message="2 findings">examples/bad/support-voice.yaml:12: The choice step &quot;ask_topic&quot; has no fallback, so nothing says what happens when the answer does not match.
+examples/bad/support-voice.yaml:25: The input step &quot;ask_postcode&quot; has no fallback, so nothing says what happens when the answer does not match.</failure>
+    </testcase>
+    <testcase classname="flow" name="input-no-reprompt-limit" time="0">
+      <failure type="input-no-reprompt-limit" message="1 finding">examples/bad/support-voice.yaml:25: The input step &quot;ask_postcode&quot; has no reprompt_limit, so nothing says how many times the user is asked again.</failure>
+    </testcase>
+    <testcase classname="flow" name="reprompt-limit-high" time="0">
+      <failure type="reprompt-limit-high" message="1 finding">examples/bad/support-voice.yaml:23: The choice step &quot;ask_topic&quot; asks again up to 6 times; the limit is 3 (--max-reprompts).</failure>
+    </testcase>
+    <testcase classname="flow" name="no-handover" time="0">
+      <failure type="no-handover" message="1 finding">examples/bad/support-voice.yaml:4: The flow has 3 steps that wait for the user and no step of type handover, so there is no way to a person.</failure>
+    </testcase>
+    <testcase classname="flow" name="handover-unreachable" time="0"/>
+    <testcase classname="flow" name="voice-multiple-questions" time="0">
+      <failure type="voice-multiple-questions" message="1 finding">examples/bad/support-voice.yaml:14: The prompt of the step &quot;ask_topic&quot; has 3 question marks. A caller can answer one question at a time.</failure>
+    </testcase>
+    <testcase classname="flow" name="voice-prompt-too-long" time="0">
+      <failure type="voice-prompt-too-long" message="1 finding">examples/bad/support-voice.yaml:9: The prompt of the step &quot;greeting&quot; has 35 words; the limit is 30 (--max-words).</failure>
+    </testcase>
+    <testcase classname="flow" name="irreversible-unconfirmed" time="0">
+      <failure type="irreversible-unconfirmed" message="1 finding">examples/bad/support-voice.yaml:42: The step &quot;take_payment&quot; cannot be undone (action &quot;take_card_payment&quot;) and runs without a confirm step before it: &quot;ask_amount&quot; (next) leads to it without a confirmation.</failure>
+    </testcase>
+    <testcase classname="flow" name="ai-disclosure-missing" time="0">
+      <failure type="ai-disclosure-missing" message="1 finding">examples/bad/support-voice.yaml:9: The opening of the flow (&quot;greeting&quot; and &quot;ask_topic&quot;) does not tell the user that they are talking to an automated system or an AI. Article 50 of the EU AI Act asks that people are told when they interact with an AI system, unless that is obvious from the circumstances.</failure>
+    </testcase>
+    <testcase classname="flow" name="widget-message-list-not-found" time="0">
+      <skipped message="no --widget file was given"/>
+    </testcase>
+    <testcase classname="flow" name="widget-live-region-missing" time="0">
+      <skipped message="no --widget file was given"/>
+    </testcase>
+  </testsuite>
+</testsuites>

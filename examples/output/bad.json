@@ -1,0 +1,607 @@
+{
+  "tool": "conversation-flow-check",
+  "version": "1.0.0",
+  "input": {
+    "flow": {
+      "file": "examples/bad/support-voice.yaml",
+      "format": "yaml",
+      "bytes": 1616,
+      "lines": 69
+    },
+    "widget": null
+  },
+  "evaluated": true,
+  "summary": {
+    "name": "Broadband help line (voice, with mistakes)",
+    "channel": "voice",
+    "channelSource": "flow",
+    "steps": 11,
+    "reachable": 9,
+    "byType": {
+      "message": 6,
+      "choice": 1,
+      "input": 2,
+      "action": 1,
+      "end": 1
+    },
+    "inputSteps": 3,
+    "handoverSteps": 0,
+    "irreversibleSteps": 1,
+    "opening": [
+      "greeting",
+      "ask_topic"
+    ]
+  },
+  "widget": null,
+  "checks": [
+    {
+      "id": "file-unreadable",
+      "level": "error",
+      "kind": "file",
+      "status": "pass",
+      "findings": 0,
+      "detail": "no finding"
+    },
+    {
+      "id": "field-invalid",
+      "level": "error",
+      "kind": "step",
+      "status": "fail",
+      "findings": 1,
+      "detail": "1 finding"
+    },
+    {
+      "id": "field-unknown",
+      "level": "warning",
+      "kind": "file",
+      "status": "fail",
+      "findings": 2,
+      "detail": "2 findings"
+    },
+    {
+      "id": "start-unknown",
+      "level": "error",
+      "kind": "flow",
+      "status": "pass",
+      "findings": 0,
+      "detail": "no finding"
+    },
+    {
+      "id": "step-target-unknown",
+      "level": "error",
+      "kind": "step",
+      "status": "fail",
+      "findings": 1,
+      "detail": "1 finding"
+    },
+    {
+      "id": "edge-missing",
+      "level": "error",
+      "kind": "step",
+      "status": "fail",
+      "findings": 1,
+      "detail": "1 finding"
+    },
+    {
+      "id": "step-unreachable",
+      "level": "warning",
+      "kind": "flow",
+      "status": "fail",
+      "findings": 2,
+      "detail": "2 findings"
+    },
+    {
+      "id": "step-dead-end",
+      "level": "error",
+      "kind": "step",
+      "status": "fail",
+      "findings": 1,
+      "detail": "1 finding"
+    },
+    {
+      "id": "flow-trap",
+      "level": "error",
+      "kind": "flow",
+      "status": "fail",
+      "findings": 2,
+      "detail": "2 findings"
+    },
+    {
+      "id": "input-no-fallback",
+      "level": "error",
+      "kind": "step",
+      "status": "fail",
+      "findings": 2,
+      "detail": "2 findings"
+    },
+    {
+      "id": "input-no-reprompt-limit",
+      "level": "warning",
+      "kind": "step",
+      "status": "fail",
+      "findings": 1,
+      "detail": "1 finding"
+    },
+    {
+      "id": "reprompt-limit-high",
+      "level": "warning",
+      "kind": "step",
+      "status": "fail",
+      "findings": 1,
+      "detail": "1 finding"
+    },
+    {
+      "id": "no-handover",
+      "level": "error",
+      "kind": "flow",
+      "status": "fail",
+      "findings": 1,
+      "detail": "1 finding"
+    },
+    {
+      "id": "handover-unreachable",
+      "level": "error",
+      "kind": "flow",
+      "status": "pass",
+      "findings": 0,
+      "detail": "no finding"
+    },
+    {
+      "id": "voice-multiple-questions",
+      "level": "warning",
+      "kind": "wording",
+      "status": "fail",
+      "findings": 1,
+      "detail": "1 finding"
+    },
+    {
+      "id": "voice-prompt-too-long",
+      "level": "warning",
+      "kind": "wording",
+      "status": "fail",
+      "findings": 1,
+      "detail": "1 finding"
+    },
+    {
+      "id": "irreversible-unconfirmed",
+      "level": "error",
+      "kind": "flow",
+      "status": "fail",
+      "findings": 1,
+      "detail": "1 finding"
+    },
+    {
+      "id": "ai-disclosure-missing",
+      "level": "warning",
+      "kind": "wording",
+      "status": "fail",
+      "findings": 1,
+      "detail": "1 finding"
+    },
+    {
+      "id": "widget-message-list-not-found",
+      "level": "warning",
+      "kind": "widget",
+      "status": "skipped",
+      "findings": 0,
+      "detail": "no --widget file was given"
+    },
+    {
+      "id": "widget-live-region-missing",
+      "level": "error",
+      "kind": "widget",
+      "status": "skipped",
+      "findings": 0,
+      "detail": "no --widget file was given"
+    }
+  ],
+  "totals": {
+    "findings": 19,
+    "byLevel": {
+      "error": 10,
+      "warning": 9,
+      "info": 0
+    },
+    "hidden": 0
+  },
+  "rules": [
+    {
+      "id": "file-unreadable",
+      "level": "error",
+      "kind": "file",
+      "findings": 0
+    },
+    {
+      "id": "field-invalid",
+      "level": "error",
+      "kind": "step",
+      "findings": 1
+    },
+    {
+      "id": "field-unknown",
+      "level": "warning",
+      "kind": "file",
+      "findings": 2
+    },
+    {
+      "id": "start-unknown",
+      "level": "error",
+      "kind": "flow",
+      "findings": 0
+    },
+    {
+      "id": "step-target-unknown",
+      "level": "error",
+      "kind": "step",
+      "findings": 1
+    },
+    {
+      "id": "edge-missing",
+      "level": "error",
+      "kind": "step",
+      "findings": 1
+    },
+    {
+      "id": "step-unreachable",
+      "level": "warning",
+      "kind": "flow",
+      "findings": 2
+    },
+    {
+      "id": "step-dead-end",
+      "level": "error",
+      "kind": "step",
+      "findings": 1
+    },
+    {
+      "id": "flow-trap",
+      "level": "error",
+      "kind": "flow",
+      "findings": 2
+    },
+    {
+      "id": "input-no-fallback",
+      "level": "error",
+      "kind": "step",
+      "findings": 2
+    },
+    {
+      "id": "input-no-reprompt-limit",
+      "level": "warning",
+      "kind": "step",
+      "findings": 1
+    },
+    {
+      "id": "reprompt-limit-high",
+      "level": "warning",
+      "kind": "step",
+      "findings": 1
+    },
+    {
+      "id": "no-handover",
+      "level": "error",
+      "kind": "flow",
+      "findings": 1
+    },
+    {
+      "id": "handover-unreachable",
+      "level": "error",
+      "kind": "flow",
+      "findings": 0
+    },
+    {
+      "id": "voice-multiple-questions",
+      "level": "warning",
+      "kind": "wording",
+      "findings": 1
+    },
+    {
+      "id": "voice-prompt-too-long",
+      "level": "warning",
+      "kind": "wording",
+      "findings": 1
+    },
+    {
+      "id": "irreversible-unconfirmed",
+      "level": "error",
+      "kind": "flow",
+      "findings": 1
+    },
+    {
+      "id": "ai-disclosure-missing",
+      "level": "warning",
+      "kind": "wording",
+      "findings": 1
+    },
+    {
+      "id": "widget-message-list-not-found",
+      "level": "warning",
+      "kind": "widget",
+      "findings": 0
+    },
+    {
+      "id": "widget-live-region-missing",
+      "level": "error",
+      "kind": "widget",
+      "findings": 0
+    }
+  ],
+  "options": {
+    "minSeverity": "info",
+    "failOn": "error",
+    "channel": "voice",
+    "channelSource": "flow",
+    "maxWords": 30,
+    "maxReprompts": 3,
+    "handover": "every-input",
+    "irreversibleActions": [
+      "pay",
+      "payment",
+      "charge",
+      "purchase",
+      "checkout",
+      "book",
+      "booking",
+      "reserve",
+      "cancel",
+      "delete",
+      "remove",
+      "erase",
+      "refund",
+      "transfer",
+      "order",
+      "submit",
+      "terminate"
+    ],
+    "disclosurePhrases": [
+      "automated",
+      "bot",
+      "chatbot",
+      "ai",
+      "artificial intelligence",
+      "virtual assistant",
+      "digital assistant",
+      "not a human",
+      "not a person",
+      "not a real person"
+    ],
+    "disabled": []
+  },
+  "findings": [
+    {
+      "id": "input-no-fallback",
+      "severity": "error",
+      "message": "The choice step \"ask_topic\" has no fallback, so nothing says what happens when the answer does not match.",
+      "file": "examples/bad/support-voice.yaml",
+      "line": 12,
+      "column": 3,
+      "at": "examples/bad/support-voice.yaml:12",
+      "subject": "ask_topic",
+      "fix": "Add a fallback: the id of the step that handles an answer the step did not understand (a reprompt step, or a handover).",
+      "kind": "step"
+    },
+    {
+      "id": "step-target-unknown",
+      "severity": "error",
+      "message": "The option \"person\" of the step \"ask_topic\" leads to \"no_such_step\", which is not under steps.",
+      "file": "examples/bad/support-voice.yaml",
+      "line": 21,
+      "column": 9,
+      "at": "examples/bad/support-voice.yaml:21",
+      "subject": "ask_topic",
+      "fix": "Correct the id, or add the step. A user who follows the edge reaches a step that does not exist.",
+      "kind": "step"
+    },
+    {
+      "id": "edge-missing",
+      "severity": "error",
+      "message": "An option (\"cancel\") of the step \"ask_topic\" has no next step, so choosing it leads nowhere.",
+      "file": "examples/bad/support-voice.yaml",
+      "line": 22,
+      "column": 9,
+      "at": "examples/bad/support-voice.yaml:22",
+      "subject": "ask_topic",
+      "fix": "Give every option a next, and give a confirm step both a yes and a no.",
+      "kind": "step"
+    },
+    {
+      "id": "input-no-fallback",
+      "severity": "error",
+      "message": "The input step \"ask_postcode\" has no fallback, so nothing says what happens when the answer does not match.",
+      "file": "examples/bad/support-voice.yaml",
+      "line": 25,
+      "column": 3,
+      "at": "examples/bad/support-voice.yaml:25",
+      "subject": "ask_postcode",
+      "fix": "Add a fallback: the id of the step that handles an answer the step did not understand (a reprompt step, or a handover).",
+      "kind": "step"
+    },
+    {
+      "id": "step-dead-end",
+      "severity": "error",
+      "message": "The step \"fault_logged\" (type message) has no step after it and is not marked as an end, so the conversation stops there with nothing for the user to do.",
+      "file": "examples/bad/support-voice.yaml",
+      "line": 31,
+      "column": 3,
+      "at": "examples/bad/support-voice.yaml:31",
+      "subject": "fault_logged",
+      "fix": "Add the step that follows it, or mark it as an end on purpose with type: end, type: handover or end: true.",
+      "kind": "step"
+    },
+    {
+      "id": "field-invalid",
+      "severity": "error",
+      "message": "The type of the step \"odd_step\" is \"speech\", which is not one of message, input, choice, confirm, action, handover, end.",
+      "file": "examples/bad/support-voice.yaml",
+      "line": 67,
+      "column": 5,
+      "at": "examples/bad/support-voice.yaml:67",
+      "subject": "odd_step",
+      "fix": "Write the value as docs/inputs.md says. The value is ignored until you do, so a check that needs it may report a second finding.",
+      "kind": "step"
+    },
+    {
+      "id": "no-handover",
+      "severity": "error",
+      "message": "The flow has 3 steps that wait for the user and no step of type handover, so there is no way to a person.",
+      "file": "examples/bad/support-voice.yaml",
+      "line": 4,
+      "column": 1,
+      "at": "examples/bad/support-voice.yaml:4",
+      "subject": null,
+      "fix": "Add a step of type handover that passes the user to a human agent, and link it from the steps that wait for the user. Turn the check off with --handover off if the bot has no human to pass to.",
+      "kind": "flow"
+    },
+    {
+      "id": "irreversible-unconfirmed",
+      "severity": "error",
+      "message": "The step \"take_payment\" cannot be undone (action \"take_card_payment\") and runs without a confirm step before it: \"ask_amount\" (next) leads to it without a confirmation.",
+      "file": "examples/bad/support-voice.yaml",
+      "line": 42,
+      "column": 3,
+      "at": "examples/bad/support-voice.yaml:42",
+      "subject": "take_payment",
+      "fix": "Put a step of type confirm in front of the action, say what is about to happen in its text, and send its yes to the action. Every edge into the action must be the yes of a confirm step.",
+      "kind": "flow"
+    },
+    {
+      "id": "flow-trap",
+      "severity": "error",
+      "message": "The step \"retry_loop_a\" is in a loop with no way out: from here no end, no handover and no dead end can be reached.",
+      "file": "examples/bad/support-voice.yaml",
+      "line": 51,
+      "column": 3,
+      "at": "examples/bad/support-voice.yaml:51",
+      "subject": "retry_loop_a",
+      "fix": "Give one step of the loop an edge that leaves it, such as a fallback to a handover after the reprompt limit.",
+      "kind": "flow"
+    },
+    {
+      "id": "flow-trap",
+      "severity": "error",
+      "message": "The step \"retry_loop_b\" is in a loop with no way out: from here no end, no handover and no dead end can be reached.",
+      "file": "examples/bad/support-voice.yaml",
+      "line": 56,
+      "column": 3,
+      "at": "examples/bad/support-voice.yaml:56",
+      "subject": "retry_loop_b",
+      "fix": "Give one step of the loop an edge that leaves it, such as a fallback to a handover after the reprompt limit.",
+      "kind": "flow"
+    },
+    {
+      "id": "field-unknown",
+      "severity": "warning",
+      "message": "The file has the key \"mode\" at the top level, which the tool does not read; nothing under it is checked.",
+      "file": "examples/bad/support-voice.yaml",
+      "line": 5,
+      "column": 1,
+      "at": "examples/bad/support-voice.yaml:5",
+      "subject": null,
+      "fix": "Correct the name to a key of docs/inputs.md, or take the key out of the file.",
+      "kind": "file"
+    },
+    {
+      "id": "field-unknown",
+      "severity": "warning",
+      "message": "The step \"ask_postcode\" has the key \"fallbak\", which the tool does not read; nothing under it is checked. Did you mean \"fallback\"?",
+      "file": "examples/bad/support-voice.yaml",
+      "line": 29,
+      "column": 5,
+      "at": "examples/bad/support-voice.yaml:29",
+      "subject": "ask_postcode",
+      "fix": "Correct the name to a key of docs/inputs.md, or take the key out of the file.",
+      "kind": "file"
+    },
+    {
+      "id": "reprompt-limit-high",
+      "severity": "warning",
+      "message": "The choice step \"ask_topic\" asks again up to 6 times; the limit is 3 (--max-reprompts).",
+      "file": "examples/bad/support-voice.yaml",
+      "line": 23,
+      "column": 3,
+      "at": "examples/bad/support-voice.yaml:23",
+      "subject": "ask_topic",
+      "fix": "Lower the limit, or raise --max-reprompts if the step is meant to ask that often.",
+      "kind": "step"
+    },
+    {
+      "id": "input-no-reprompt-limit",
+      "severity": "warning",
+      "message": "The input step \"ask_postcode\" has no reprompt_limit, so nothing says how many times the user is asked again.",
+      "file": "examples/bad/support-voice.yaml",
+      "line": 25,
+      "column": 3,
+      "at": "examples/bad/support-voice.yaml:25",
+      "subject": "ask_postcode",
+      "fix": "Set reprompt_limit to the number of times the step asks again (often 2 or 3) before it follows its fallback.",
+      "kind": "step"
+    },
+    {
+      "id": "step-unreachable",
+      "severity": "warning",
+      "message": "The step \"old_menu\" cannot be reached from the start step \"greeting\".",
+      "file": "examples/bad/support-voice.yaml",
+      "line": 61,
+      "column": 3,
+      "at": "examples/bad/support-voice.yaml:61",
+      "subject": "old_menu",
+      "fix": "Link the step from a step that is reachable, or take it out of the file. A step nobody can reach is dead text that still has to be kept up to date.",
+      "kind": "flow"
+    },
+    {
+      "id": "step-unreachable",
+      "severity": "warning",
+      "message": "The step \"odd_step\" cannot be reached from the start step \"greeting\".",
+      "file": "examples/bad/support-voice.yaml",
+      "line": 66,
+      "column": 3,
+      "at": "examples/bad/support-voice.yaml:66",
+      "subject": "odd_step",
+      "fix": "Link the step from a step that is reachable, or take it out of the file. A step nobody can reach is dead text that still has to be kept up to date.",
+      "kind": "flow"
+    },
+    {
+      "id": "ai-disclosure-missing",
+      "severity": "warning",
+      "message": "The opening of the flow (\"greeting\" and \"ask_topic\") does not tell the user that they are talking to an automated system or an AI. Article 50 of the EU AI Act asks that people are told when they interact with an AI system, unless that is obvious from the circumstances.",
+      "file": "examples/bad/support-voice.yaml",
+      "line": 9,
+      "column": 5,
+      "at": "examples/bad/support-voice.yaml:9",
+      "subject": "greeting",
+      "fix": "Say it in the first message, in plain words, such as \"I am an automated assistant\". Article 50 of the EU AI Act asks that people are told when they interact with an AI system, unless that is obvious from the circumstances. Turn the check off with --disable ai-disclosure-missing if it does not apply.",
+      "kind": "wording"
+    },
+    {
+      "id": "voice-prompt-too-long",
+      "severity": "warning",
+      "message": "The prompt of the step \"greeting\" has 35 words; the limit is 30 (--max-words).",
+      "file": "examples/bad/support-voice.yaml",
+      "line": 9,
+      "column": 5,
+      "at": "examples/bad/support-voice.yaml:9",
+      "subject": "greeting",
+      "fix": "Shorten the prompt, or split it into two steps. Put the question at the end, and the choices last.",
+      "kind": "wording"
+    },
+    {
+      "id": "voice-multiple-questions",
+      "severity": "warning",
+      "message": "The prompt of the step \"ask_topic\" has 3 question marks. A caller can answer one question at a time.",
+      "file": "examples/bad/support-voice.yaml",
+      "line": 14,
+      "column": 5,
+      "at": "examples/bad/support-voice.yaml:14",
+      "subject": "ask_topic",
+      "fix": "Ask one question in each prompt and put the next question in the next step. A caller cannot scroll back to the first question.",
+      "kind": "wording"
+    }
+  ],
+  "notes": [],
+  "notice": "This report reads the flow file and nothing else. It does not run the flow and does not talk to a bot. A clean result means that none of the problems of its checks were found in the file; it is not a statement that the bot is good, accessible or lawful.",
+  "result": {
+    "pass": false,
+    "failOn": "error",
+    "text": "FAIL - 10 findings at or above error (10 error, 9 warning)"
+  }
+}

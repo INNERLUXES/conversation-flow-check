@@ -1,0 +1,14 @@
+# flow-trap
+
+- Level: error
+- Kind: flow
+
+**What it looks at.** a reachable step from which no end, no handover and no dead end can be reached: a loop with no way out
+
+**Why it exists.** Reporting a loop the user cannot leave is a best practice of this tool; no standard sets it; a user in such a loop can only close the window
+
+**What to change.** Give one step of the loop an edge that leaves it, such as a fallback to a handover after the reprompt limit.
+
+**What it cannot see.** It follows every edge as if the user could take it. A loop that the platform breaks by a counter outside the file looks like a trap here.
+
+This check is a best practice of this tool; no standard sets it.

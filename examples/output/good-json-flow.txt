@@ -1,0 +1,39 @@
+conversation-flow-check: examples/good/returns-chat.json
+flow file: examples/good/returns-chat.json (json, 54 lines, 1,489 bytes)
+name: Shop returns (chat)
+channel: chat (from the flow file)
+steps: 7, 7 reachable from the start (message 1, input 1, choice 1, confirm 1, action 1, handover 1, end 1)
+waiting for the user: 3 steps; 1 handover step; 1 step that cannot be undone
+findings: 0
+
+Checks (20)
+
+  check                          level    kind     status   findings
+  file-unreadable                error    file     pass     0
+  field-invalid                  error    step     pass     0
+  field-unknown                  warning  file     pass     0
+  start-unknown                  error    flow     pass     0
+  step-target-unknown            error    step     pass     0
+  edge-missing                   error    step     pass     0
+  step-unreachable               warning  flow     pass     0
+  step-dead-end                  error    step     pass     0
+  flow-trap                      error    flow     pass     0
+  input-no-fallback              error    step     pass     0
+  input-no-reprompt-limit        warning  step     pass     0
+  reprompt-limit-high            warning  step     pass     0
+  no-handover                    error    flow     pass     0
+  handover-unreachable           error    flow     pass     0
+  voice-multiple-questions       warning  wording  skipped  - (the channel is chat; it only applies to voice)
+  voice-prompt-too-long          warning  wording  skipped  - (the channel is chat; it only applies to voice)
+  irreversible-unconfirmed       error    flow     pass     0
+  ai-disclosure-missing          warning  wording  pass     0
+  widget-message-list-not-found  warning  widget   skipped  - (no --widget file was given)
+  widget-live-region-missing     error    widget   skipped  - (no --widget file was given)
+
+Findings (0)
+
+  none
+
+This report reads the flow file and nothing else. It does not run the flow and does not talk to a bot. A clean result means that none of the problems of its checks were found in the file; it is not a statement that the bot is good, accessible or lawful.
+
+RESULT: PASS - no finding at or above error
