@@ -1,0 +1,51 @@
+{
+  "name": "conversation-flow-check",
+  "version": "1.0.0",
+  "description": "Checks a chatbot or voice conversation flow, written as YAML or JSON, before it reaches users. Reports steps that cannot be reached, dead ends and loops with no way out, input steps with no fallback or no reprompt limit, flows with no route to a human agent, voice prompts that ask more than one question or run long, irreversible actions (payment, booking, cancel, delete, refund) that run without a confirmation, an opening that does not say the user is talking to an automated system (EU AI Act Article 50), and, if asked, a chat widget page whose message list is not a live region (WCAG 2.2 SC 4.1.3). It reads the flow file and runs nothing. Contacts nothing over the network, reads no clock, writes nothing. Text, markdown, JSON, SARIF and JUnit output, no dependencies.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "bin": {
+    "conversation-flow-check": "bin/conversation-flow-check.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "docs",
+    "examples",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "test:coverage": "node --test --experimental-test-coverage \"test/*.test.js\"",
+    "check": "node tools/check.mjs",
+    "example": "node tools/example.mjs"
+  },
+  "keywords": [
+    "chatbot",
+    "voice-assistant",
+    "conversation-design",
+    "dialog-flow",
+    "linter",
+    "accessibility",
+    "eu-ai-act",
+    "yaml",
+    "junit",
+    "sarif",
+    "cli",
+    "nodejs"
+  ],
+  "author": "INNERLUXES <info@innerluxes.dev>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/INNERLUXES/conversation-flow-check.git"
+  },
+  "homepage": "https://innerluxes.dev"
+}
