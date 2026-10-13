@@ -1,0 +1,69 @@
+# A made-up broadband provider line, spoken, with a mistake of most checks.
+name: Broadband help line (voice, with mistakes)
+channel: voice
+start: greeting
+mode: fast
+steps:
+  greeting:
+    type: message
+    text: Welcome to the Lakeside Broadband help line, where we are always glad to hear from you, whatever the weather is doing where you are today, and we hope your day is going well so far.
+    next: ask_topic
+
+  ask_topic:
+    type: choice
+    text: Do you want to report a fault? Or pay a bill? Or speak to a person?
+    options:
+      - label: fault
+        next: ask_postcode
+      - label: bill
+        next: ask_amount
+      - label: person
+        next: no_such_step
+      - label: cancel
+    reprompt_limit: 6
+
+  ask_postcode:
+    type: input
+    text: What is the postcode of the line with the fault?
+    next: fault_logged
+    fallbak: ask_postcode
+
+  fault_logged:
+    type: message
+    text: Thank you. Your fault is logged.
+
+  ask_amount:
+    type: input
+    text: How much would you like to pay, in pounds?
+    reprompt_limit: 2
+    next: take_payment
+    fallback: retry_loop_a
+
+  take_payment:
+    type: action
+    action: take_card_payment
+    next: paid
+
+  paid:
+    type: end
+    text: Your payment is taken. Thank you and goodbye.
+
+  retry_loop_a:
+    type: message
+    text: Let us try that again.
+    next: retry_loop_b
+
+  retry_loop_b:
+    type: message
+    text: One more time.
+    next: retry_loop_a
+
+  old_menu:
+    type: message
+    text: This menu is no longer used.
+    next: paid
+
+  odd_step:
+    type: speech
+    text: This step has a type the tool does not know.
+    next: paid

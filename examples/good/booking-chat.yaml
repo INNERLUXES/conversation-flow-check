@@ -1,0 +1,97 @@
+# A made-up salon that books and cancels visits by chat. It passes every check at every level.
+name: Salon booking (chat)
+description: Books and cancels visits at a made-up salon, with a confirmation before each change.
+channel: chat
+start: welcome
+steps:
+  welcome:
+    type: message
+    text: Hi, I am an automated assistant for Maple Street Salon. I can book or cancel a visit, or pass you to a person.
+    next: ask_need
+
+  ask_need:
+    type: choice
+    text: What would you like to do?
+    reprompt_limit: 2
+    options:
+      - label: Book a visit
+        next: ask_service
+      - label: Cancel a visit
+        next: ask_reference
+      - label: Talk to a person
+        next: to_person
+    fallback: to_person
+
+  ask_service:
+    type: choice
+    text: Which service would you like?
+    reprompt_limit: 2
+    options:
+      - label: Haircut
+        next: ask_day
+      - label: Colour
+        next: ask_day
+      - label: Styling
+        next: ask_day
+      - label: Talk to a person
+        next: to_person
+    fallback: to_person
+
+  ask_day:
+    type: input
+    text: 'Which day suits you? You can write it like "next Friday".'
+    reprompt_limit: 2
+    next: confirm_booking
+    fallback: to_person
+
+  confirm_booking:
+    type: confirm
+    text: Shall I book that visit now?
+    reprompt_limit: 2
+    yes: book_visit
+    no: ask_service
+    fallback: to_person
+
+  book_visit:
+    type: action
+    action: book_appointment
+    next: booked
+    on_error: booking_failed
+
+  booked:
+    type: end
+    text: Your visit is booked. We have sent the details to your email. Goodbye!
+
+  booking_failed:
+    type: message
+    text: Sorry, I could not book that visit. I will pass you to a person.
+    next: to_person
+
+  ask_reference:
+    type: input
+    text: What is the reference on your booking email?
+    reprompt_limit: 2
+    next: confirm_cancel
+    fallback: to_person
+
+  confirm_cancel:
+    type: confirm
+    text: Shall I cancel that visit? This cannot be undone.
+    reprompt_limit: 2
+    yes: cancel_visit
+    no: ask_need
+    fallback: to_person
+
+  cancel_visit:
+    type: action
+    action: cancel_appointment
+    next: cancelled
+    on_error: booking_failed
+
+  cancelled:
+    type: end
+    text: Your visit is cancelled. Goodbye!
+
+  to_person:
+    type: handover
+    text: One moment, I am passing you to a person from the salon team.

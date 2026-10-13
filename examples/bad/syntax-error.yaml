@@ -1,0 +1,9 @@
+name: A flow that cannot be read
+start: hello
+steps:
+  hello:
+    type: message
+    text: Hello, how can I help? Ask me anything: I will try.
+    next: bye
+  bye:
+    type: end

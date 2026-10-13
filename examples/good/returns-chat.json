@@ -1,0 +1,54 @@
+{
+  "name": "Shop returns (chat)",
+  "channel": "chat",
+  "start": "hello",
+  "steps": {
+    "hello": {
+      "type": "message",
+      "text": "Hello! I am a chatbot for Corner Shelf Books. I can start a return for you.",
+      "next": "ask_order"
+    },
+    "ask_order": {
+      "type": "input",
+      "text": "What is your order number?",
+      "reprompt_limit": 2,
+      "next": "ask_reason",
+      "fallback": "to_person"
+    },
+    "ask_reason": {
+      "type": "choice",
+      "text": "Why are you returning it?",
+      "reprompt_limit": 2,
+      "options": [
+        { "label": "Damaged", "next": "confirm_refund" },
+        { "label": "Wrong item", "next": "confirm_refund" },
+        { "label": "Changed my mind", "next": "confirm_refund" },
+        { "label": "Talk to a person", "next": "to_person" }
+      ],
+      "fallback": "to_person"
+    },
+    "confirm_refund": {
+      "type": "confirm",
+      "text": "Shall I refund the order to your original payment method?",
+      "reprompt_limit": 2,
+      "yes": "refund_order",
+      "no": "to_person",
+      "fallback": "to_person"
+    },
+    "refund_order": {
+      "type": "action",
+      "action": "refund_order",
+      "irreversible": true,
+      "next": "refunded",
+      "on_error": "to_person"
+    },
+    "refunded": {
+      "type": "end",
+      "text": "Your refund is on its way. Goodbye!"
+    },
+    "to_person": {
+      "type": "handover",
+      "text": "I am passing you to a person from the shop team."
+    }
+  }
+}

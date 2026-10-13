@@ -1,0 +1,56 @@
+{
+  "name": "Salon booking (chat, with mistakes)",
+  "channel": "chat",
+  "start": "welcome",
+  "steps": {
+    "welcome": {
+      "type": "message",
+      "text": "Welcome to Maple Street Salon. What would you like to do?",
+      "next": "ask_need"
+    },
+    "ask_need": {
+      "type": "choice",
+      "text": "Book or cancel?",
+      "reprompt_limit": 2,
+      "options": [
+        { "label": "Book", "next": "ask_day" },
+        { "label": "Cancel", "next": "cancel_visit" },
+        { "label": "Talk to a person", "next": "to_person" }
+      ],
+      "fallback": "ask_need"
+    },
+    "ask_day": {
+      "type": "input",
+      "text": "Which day suits you?",
+      "reprompt_limit": 2,
+      "next": "confirm_booking",
+      "fallback": "done"
+    },
+    "confirm_booking": {
+      "type": "confirm",
+      "text": "Shall I book that visit?",
+      "reprompt_limit": 2,
+      "yes": "book_visit",
+      "fallback": "done"
+    },
+    "book_visit": {
+      "type": "action",
+      "action": "book_appointment",
+      "next": "done"
+    },
+    "cancel_visit": {
+      "type": "action",
+      "action": "cancel_appointment",
+      "irreversible": true,
+      "next": "done"
+    },
+    "to_person": {
+      "type": "handover",
+      "text": "I am passing you to a person from the salon team."
+    },
+    "done": {
+      "type": "end",
+      "text": "All done. Goodbye!"
+    }
+  }
+}

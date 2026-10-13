@@ -1,0 +1,68 @@
+# A made-up broadband provider line, spoken. Short prompts, one question each, a way to a person from every question.
+name: Broadband help line (voice)
+channel: voice
+start: greeting
+steps:
+  greeting:
+    type: message
+    text: Hello, you have reached the Lakeside Broadband help line. I am an automated voice assistant.
+    next: ask_topic
+
+  ask_topic:
+    type: choice
+    text: Do you want to report a fault, pay a bill, or speak to a person?
+    reprompt_limit: 2
+    options:
+      - label: fault
+        next: ask_postcode
+      - label: bill
+        next: ask_amount
+      - label: person
+        next: to_person
+    fallback: to_person
+
+  ask_postcode:
+    type: input
+    text: What is the postcode of the line with the fault?
+    reprompt_limit: 2
+    next: log_fault
+    fallback: to_person
+
+  log_fault:
+    type: action
+    action: log_fault_report
+    next: fault_logged
+    on_error: to_person
+
+  fault_logged:
+    type: end
+    text: Thank you. Your fault is logged and an engineer will contact you. Goodbye.
+
+  ask_amount:
+    type: input
+    text: How much would you like to pay, in pounds?
+    reprompt_limit: 2
+    next: confirm_payment
+    fallback: to_person
+
+  confirm_payment:
+    type: confirm
+    text: I will take that payment from your saved card now. Is that right?
+    reprompt_limit: 2
+    yes: take_payment
+    no: ask_amount
+    fallback: to_person
+
+  take_payment:
+    type: action
+    action: take_card_payment
+    next: paid
+    on_error: to_person
+
+  paid:
+    type: end
+    text: Your payment is taken. Thank you and goodbye.
+
+  to_person:
+    type: handover
+    text: Please hold while I pass you to a member of the team.
